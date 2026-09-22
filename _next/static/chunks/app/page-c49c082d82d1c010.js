@@ -83,9 +83,9 @@
           }),
         d = "deed-waitlist",
         h = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
-        A = "0xComingSoon",
+        A = "0x55d598f8b2c3528e47062b760d6fc66cfd2a2578",
         B =
-          "https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon";
+          "https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0x55d598f8b2c3528e47062b760d6fc66cfd2a2578";
       function m(L) {
         let { xUrl: e = "https://x.com/deedestaterh", telegramFallback: a = "" } =
             L,
