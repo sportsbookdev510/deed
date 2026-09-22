@@ -63,18 +63,41 @@
               d: "M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z",
             }),
           }),
+        C = () =>
+          (0, s.jsx)("svg", {
+            viewBox: "0 0 256 256",
+            fill: "currentColor",
+            "aria-hidden": "true",
+            children: (0, s.jsx)("path", {
+              d: "M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z",
+            }),
+          }),
+        k = () =>
+          (0, s.jsx)("svg", {
+            viewBox: "0 0 256 256",
+            fill: "currentColor",
+            "aria-hidden": "true",
+            children: (0, s.jsx)("path", {
+              d: "M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z",
+            }),
+          }),
         d = "deed-waitlist",
-        h = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        h = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
+        A = "0xComingSoon",
+        B =
+          "https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon";
       function m(L) {
-        let { xUrl: e = "https://x.com/deedestate_rh", telegramFallback: a = "" } =
+        let { xUrl: e = "https://x.com/deedestaterh", telegramFallback: a = "" } =
             L,
           [t, m] = (0, l.useState)(!1),
           [u, x] = (0, l.useState)(""),
           [p, j] = (0, l.useState)(null),
           [g, f] = (0, l.useState)(!1),
           [N, b] = (0, l.useState)(null),
+          [_, S] = (0, l.useState)(!1),
           v = (0, l.useRef)(null),
-          y = (0, l.useRef)(null);
+          y = (0, l.useRef)(null),
+          T = (0, l.useRef)(null);
         (0, l.useEffect)(() => {
           let L = !1,
             e = (L) =>
@@ -102,7 +125,15 @@
               L && L.email && b({ email: L.email, tg: L.tg });
             } catch (L) {}
           }, []);
-        let w = async (L) => {
+        let P = async () => {
+            try {
+              await navigator.clipboard.writeText(A);
+            } catch (L) {}
+            S(!0),
+              T.current && clearTimeout(T.current),
+              (T.current = setTimeout(() => S(!1), 1600));
+          },
+          w = async (L) => {
             var e, a, s;
             L.preventDefault();
             let l = u.trim().toLowerCase();
@@ -284,6 +315,53 @@
                             }),
                           ],
                         }),
+                      (0, s.jsxs)("div", {
+                        className: "trade",
+                        children: [
+                          (0, s.jsxs)("button", {
+                            className: "ca",
+                            type: "button",
+                            id: "caCopy",
+                            "aria-label": _
+                              ? "Contract address copied"
+                              : "Copy contract address",
+                            onClick: P,
+                            children: [
+                              (0, s.jsx)("span", {
+                                className: "ca-label",
+                                children: "CA",
+                              }),
+                              (0, s.jsx)("code", {
+                                className: "ca-addr",
+                                id: "caAddr",
+                                children: A,
+                              }),
+                              (0, s.jsx)("span", {
+                                className: "ca-action",
+                                id: "caAction",
+                                "aria-hidden": "true",
+                                children: _
+                                  ? (0, s.jsx)(k, {})
+                                  : (0, s.jsx)(C, {}),
+                              }),
+                            ],
+                          }),
+                          (0, s.jsxs)("a", {
+                            className: "btn",
+                            href: B,
+                            target: "_blank",
+                            rel: "noopener",
+                            id: "buy",
+                            children: [
+                              (0, s.jsx)("span", { children: "BUY $DEED" }),
+                              (0, s.jsx)("span", {
+                                className: "sq",
+                                children: (0, s.jsx)(n, {}),
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
                       !N &&
                         (0, s.jsxs)("a", {
                           className: "x-link",

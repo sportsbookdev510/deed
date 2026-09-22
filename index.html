@@ -77,6 +77,69 @@
       src="/_next/static/chunks/polyfills-42372ed130431b0a.js?dpl=dpl_A23Dut1nnMx7aoHeBFA1edJPTMJ6"
       nomodule=""
     ></script>
+    <style>
+      .trade {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 520px;
+      }
+      .ca {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        max-width: 100%;
+        height: 40px;
+        padding: 0 12px;
+        border: 0;
+        cursor: pointer;
+        background: transparent;
+        color: var(--cream);
+        font: inherit;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        box-shadow: inset 0 0 0 1px var(--green-line);
+        transition: background 0.5s var(--ease), transform 0.5s var(--ease);
+      }
+      .ca:hover {
+        background: rgba(245, 255, 223, 0.08);
+      }
+      .ca:active {
+        transform: scale(0.98);
+      }
+      .ca-label {
+        color: rgba(245, 255, 223, 0.55);
+        letter-spacing: 0.08em;
+        font-size: 12px;
+      }
+      .ca-addr {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 13px;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .ca-action {
+        display: grid;
+        place-items: center;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        color: rgba(245, 255, 223, 0.72);
+      }
+      .ca-action svg {
+        width: 16px;
+        height: 16px;
+      }
+      .trade .btn {
+        min-width: 160px;
+        justify-content: space-between;
+      }
+    </style>
   </head>
   <body>
     <div hidden=""><!--$--><!--/$--></div>
@@ -182,9 +245,46 @@
             </div>
             <p class="msg" id="msg" role="alert" hidden=""></p>
           </form>
+          <div class="trade">
+            <button
+              class="ca"
+              type="button"
+              id="caCopy"
+              aria-label="Copy contract address"
+            >
+              <span class="ca-label">CA</span>
+              <code class="ca-addr" id="caAddr">0xComingSoon</code>
+              <span class="ca-action" id="caAction" aria-hidden="true">
+                <svg viewBox="0 0 256 256" fill="currentColor">
+                  <path
+                    d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <a
+              class="btn"
+              href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon"
+              target="_blank"
+              rel="noopener"
+              id="buy"
+            >
+              <span>BUY</span
+              ><span class="sq"
+                ><svg
+                  viewBox="0 0 256 256"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                  ></path></svg
+              ></span>
+            </a>
+          </div>
           <a
             class="x-link"
-            href="https://x.com/deedestate_rh"
+            href="https://x.com/deedestaterh"
             target="_blank"
             rel="noopener"
             ><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
@@ -215,7 +315,7 @@
     <script>
       self.__next_f.push([
         1,
-        '0:{"P":null,"b":"XpxqVxk1IxAh8o9LxmOj1","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/99945a46fb707892.css?dpl=dpl_A23Dut1nnMx7aoHeBFA1edJPTMJ6","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_37ef13 __variable_84aefc","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L4",null,{"xUrl":"https://x.com/deedestate_rh","telegramFallback":"https://t.me/deedestate"}],null,["$","$L5",null,{"children":["$L6",["$","$L7",null,{"promise":"$@8"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L9",null,{"children":"$La"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lb",null,{"children":["$","div",null,{"hidden":true,"children":["$","$c",null,{"fallback":null,"children":"$Ld"}]}]}]]}],false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}\n',
+        '0:{"P":null,"b":"XpxqVxk1IxAh8o9LxmOj1","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/99945a46fb707892.css?dpl=dpl_A23Dut1nnMx7aoHeBFA1edJPTMJ6","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_37ef13 __variable_84aefc","children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L4",null,{"xUrl":"https://x.com/deedestaterh","telegramFallback":"https://t.me/deedestate"}],null,["$","$L5",null,{"children":["$L6",["$","$L7",null,{"promise":"$@8"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L9",null,{"children":"$La"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lb",null,{"children":["$","div",null,{"hidden":true,"children":["$","$c",null,{"fallback":null,"children":"$Ld"}]}]}]]}],false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}\n',
       ]);
     </script>
     <script>
